@@ -2,10 +2,7 @@ package shoppingplateform.Product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -24,6 +21,11 @@ public class ProductController {
     @RequestMapping(value = "",method = RequestMethod.GET)
     public List<Product> getProducts(){
         return productService.getAll();
+    }
+
+    @RequestMapping(value = "/view/{id}",method = RequestMethod.GET)
+    public void view(@PathVariable Integer id){
+        productService.view(id);
     }
 
 }

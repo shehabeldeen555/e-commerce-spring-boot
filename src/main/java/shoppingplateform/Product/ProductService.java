@@ -23,4 +23,10 @@ public class ProductService {
         productRepository.findAll().forEach(products::add);
         return products;
     }
+
+    public void view(Integer id){
+        Product product=productRepository.findById(id).get();
+        product.increaseView();
+        productRepository.save(product);
+    }
 }

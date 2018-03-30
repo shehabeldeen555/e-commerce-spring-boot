@@ -2,6 +2,7 @@ package shoppingplateform.StoreOwner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shoppingplateform.Store.Store;
 
 import java.util.ArrayList;
 import java.util.List;

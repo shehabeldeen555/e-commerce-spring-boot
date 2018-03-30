@@ -14,19 +14,11 @@ public class Product {
     private String category;
     private String brand;
     private String type;
+    private Integer views=0;
 
     public Product(){}
 
     public Product(String name, double price, String category, String brand, String type) {
-        this.name = name;
-        this.price = price;
-        this.category = category;
-        this.brand = brand;
-        this.type = type;
-    }
-
-    public Product(Integer id, String name, double price, String category, String brand, String type) {
-        this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
@@ -80,5 +72,17 @@ public class Product {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Integer getViews() {
+        return views;
+    }
+
+    public void setViews(Integer views) {
+        this.views = views;
+    }
+
+    public void increaseView(){
+        this.views++;
     }
 }

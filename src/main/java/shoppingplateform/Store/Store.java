@@ -1,5 +1,7 @@
 package shoppingplateform.Store;
 
+import shoppingplateform.StoreOwner.StoreOwner;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,8 +15,18 @@ public class Store {
     private String location;
     private String type;
     private boolean added = false;
+    private String storeOwner;
+
 
     public Store() {
+    }
+
+    public Store(String name, String location, String type, boolean added, String storeOwner) {
+        this.name = name;
+        this.location = location;
+        this.type = type;
+        this.added = added;
+        this.storeOwner = storeOwner;
     }
 
     public Store(String name, String location, String type) {
@@ -54,5 +66,21 @@ public class Store {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setAdded(boolean added) {
+        this.added = added;
+    }
+
+    public boolean isAdded() {
+        return added;
+    }
+
+    public String getStoreOwner() {
+        return storeOwner;
+    }
+
+    public void setStoreOwner(String storeOwner) {
+        this.storeOwner = storeOwner;
     }
 }
