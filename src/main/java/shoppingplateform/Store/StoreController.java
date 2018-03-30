@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/Store")
 public class StoreController {
@@ -18,6 +21,9 @@ public class StoreController {
         storeService.addStore(store);
     }
 
-
+    @RequestMapping(value = "/getRequests",method = RequestMethod.GET)
+    public List<Store> request(){
+        return storeService.getRequests();
+    }
 
 }

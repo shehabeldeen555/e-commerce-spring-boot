@@ -12,6 +12,7 @@ public class Store {
     private String name;
     private String location;
     private String type;
+    private boolean added = false;
 
     public Store() {
     }
@@ -20,6 +21,7 @@ public class Store {
         this.name = name;
         this.location = location;
         this.type = type;
+        this.added=false;
     }
 
     public Integer getId() {

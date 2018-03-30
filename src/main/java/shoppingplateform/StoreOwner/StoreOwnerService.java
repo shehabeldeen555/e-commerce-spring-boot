@@ -13,19 +13,15 @@ public class StoreOwnerService {
     @Autowired
     private StoreOwnerRepository storeOwnerRepository;
 
-    public boolean login(StoreOwner owner) {
-        Optional<StoreOwner> storeOwner=storeOwnerRepository.findByUsername(owner.getUsername());
+    public Optional<StoreOwner> login(String usernameEmail) {
+        Optional<StoreOwner> storeOwner=storeOwnerRepository.findByUsername(usernameEmail);
         if(storeOwner.isPresent()){
-            if(storeOwner.get().getPassword().equals(owner.getPassword()))
-                return true;
+            return storeOwner;
         }else{
-            storeOwner=storeOwnerRepository.findByEmail(owner.getUsername());
-            if(storeOwner.isPresent()){
-                if(storeOwner.get().getPassword().equals(owner.getPassword()))
-                    return true;
-            }
+            storeOwner=storeOwnerRepository.findByEmail(usernameEmail);
+            return  storeOwner;
         }
-        return false;
+
     }
 
     public boolean register(StoreOwner storeOwner) {

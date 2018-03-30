@@ -15,9 +15,9 @@ public class StoreOwnerController {
     @Autowired
     private StoreOwnerService storeOwnerService;
 
-    @RequestMapping(value = "/Login", method = RequestMethod.POST)
-    void login(@RequestBody StoreOwner storeOwner) {
-        storeOwnerService.login(storeOwner);
+    @RequestMapping(value = "/login/{usernameEmail}", method = RequestMethod.GET)
+    Optional<StoreOwner> login(@PathVariable String usernameEmail) {
+       return storeOwnerService.login(usernameEmail);
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
