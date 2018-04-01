@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import shoppingplateform.Product.Product;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/Brand")
 public class BrandController {
@@ -17,6 +19,11 @@ public class BrandController {
     @RequestMapping(value = "/addBrand",method = RequestMethod.POST)
     public void addBrand(@RequestBody Brand brand){
         brandService.addBrand(brand);
+    }
+
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public List<Brand> getAll(){
+        return brandService.getAll();
     }
 
 }

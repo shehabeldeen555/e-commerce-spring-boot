@@ -24,9 +24,7 @@ public class ProductService {
         return products;
     }
 
-    public void view(Integer id){
-        Product product=productRepository.findById(id).get();
-        product.increaseView();
-        productRepository.save(product);
+    public Optional<Product> getProduct(Integer id){
+        return productRepository.findById(id);
     }
 }

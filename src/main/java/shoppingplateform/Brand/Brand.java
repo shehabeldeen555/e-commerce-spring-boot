@@ -14,7 +14,6 @@ public class Brand {
     private Integer id;
     private String name;
     private String company;
-    //private ArrayList<Product> products;
 
     public Brand(){
 

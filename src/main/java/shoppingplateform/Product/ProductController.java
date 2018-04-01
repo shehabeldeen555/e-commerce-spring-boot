@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Products")
@@ -23,9 +24,9 @@ public class ProductController {
         return productService.getAll();
     }
 
-    @RequestMapping(value = "/view/{id}",method = RequestMethod.GET)
-    public void view(@PathVariable Integer id){
-        productService.view(id);
+    @RequestMapping(value = "/getProduct/{id}", method = RequestMethod.GET)
+    public Optional<Product> getProduct(@PathVariable Integer id){
+        return productService.getProduct(id);
     }
 
 }

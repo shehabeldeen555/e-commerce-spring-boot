@@ -14,7 +14,6 @@ public class Product {
     private String category;
     private String brand;
     private String type;
-    private Integer views=0;
 
     public Product(){}
 
@@ -74,15 +73,4 @@ public class Product {
         this.type = type;
     }
 
-    public Integer getViews() {
-        return views;
-    }
-
-    public void setViews(Integer views) {
-        this.views = views;
-    }
-
-    public void increaseView(){
-        this.views++;
-    }
 }
