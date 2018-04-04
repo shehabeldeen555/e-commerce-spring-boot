@@ -14,16 +14,4 @@ import java.net.URL;
 @RestController
 public class UserController {
 
-    @RequestMapping("/x")
-    String login(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String type = request.getParameter("user");
-        switch (type){
-            case "admin":{
-                response.sendRedirect("/Admin/login");
-                return "Admin";
-            }
-        }
-
-        return "s";
-    }
 }

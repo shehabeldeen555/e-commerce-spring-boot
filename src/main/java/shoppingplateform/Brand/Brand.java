@@ -12,6 +12,7 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = true)
     private Integer id;
+    @Column(unique = true)
     private String name;
     private String company;
 

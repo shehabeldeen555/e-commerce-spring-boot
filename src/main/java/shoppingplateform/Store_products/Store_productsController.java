@@ -27,5 +27,4 @@ public class Store_productsController {
         store_productsService.view(storeID, productID);
     }
 
-
 }
