@@ -1,10 +1,10 @@
 package shoppingplateform.Admin;
 
 import org.springframework.data.repository.CrudRepository;
+import shoppingplateform.User.UserBaseRepository;
 
 import java.util.Optional;
 
-public interface AdminRepository extends CrudRepository<Admin, Integer> {
-    public Optional<Admin> findByUsername(String username);
-    public Optional<Admin> findByEmail(String email);
+public interface AdminRepository extends UserBaseRepository<Admin, Integer> {
+
 }

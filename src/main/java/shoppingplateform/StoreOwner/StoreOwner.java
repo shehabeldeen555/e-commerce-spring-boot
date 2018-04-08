@@ -3,13 +3,14 @@ package shoppingplateform.StoreOwner;
 import shoppingplateform.Store.Store;
 import shoppingplateform.User.User;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="StoreOwner")
+@DiscriminatorValue(value = "StoreOwner")
 public class StoreOwner extends User {
 
     public StoreOwner(){}

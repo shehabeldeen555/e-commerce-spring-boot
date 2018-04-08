@@ -1,11 +1,10 @@
 package shoppingplateform.Customer;
 
 import org.springframework.data.repository.CrudRepository;
+import shoppingplateform.User.UserBaseRepository;
+
 import java.util.Optional;
 
-public interface CustomerRepository extends CrudRepository<Customer, Integer> {
-
-    public Optional<Customer> findByUsername(String username);
-    public Optional<Customer> findByEmail(String email);
+public interface CustomerRepository extends UserBaseRepository<Customer, Integer> {
 
 }

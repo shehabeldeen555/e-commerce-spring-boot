@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shoppingplateform.Store.Store;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @Service
 public class StoreOwnerService {
 
-    @Autowired
+    @Resource
     private StoreOwnerRepository storeOwnerRepository;
 
     public Optional<StoreOwner> login(String usernameEmail) {

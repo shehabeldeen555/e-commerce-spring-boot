@@ -23,8 +23,8 @@ public class StoreOwnerController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    void register(@RequestBody StoreOwner storeOwner) {
-        storeOwnerService.register(storeOwner);
+    boolean register(@RequestBody StoreOwner storeOwner) {
+       return storeOwnerService.register(storeOwner);
     }
 
 

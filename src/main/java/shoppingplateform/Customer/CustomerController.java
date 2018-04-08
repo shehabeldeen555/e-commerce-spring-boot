@@ -29,7 +29,6 @@ public class CustomerController {
         return customerService.register(customer);
     }
 
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<Customer> getAll() {
         return customerService.getAll();

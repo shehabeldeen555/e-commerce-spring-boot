@@ -3,6 +3,7 @@ package shoppingplateform.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +11,7 @@ import java.util.Optional;
 @Service
 public class CustomerService {
 
-    @Autowired
+    @Resource
     private CustomerRepository customerRepository;
 
     public Optional<Customer> login(String usernameEmail) {

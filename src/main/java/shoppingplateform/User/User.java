@@ -2,7 +2,10 @@ package shoppingplateform.User;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Table(name = "USER")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "USER_TYPE" , discriminatorType = DiscriminatorType.STRING)
 public abstract class User {
 
     @Id
