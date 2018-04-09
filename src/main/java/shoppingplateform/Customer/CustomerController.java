@@ -19,11 +19,6 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    boolean register(@RequestBody Customer customer) {
-        return customerService.register(customer);
-    }
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<Customer> getAll() {
         return customerService.getAll();

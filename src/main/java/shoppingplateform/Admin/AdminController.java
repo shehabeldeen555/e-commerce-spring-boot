@@ -14,8 +14,4 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/login/{usernameEmail}", method = RequestMethod.GET)
-    Optional<Admin> login(@PathVariable String usernameEmail) {
-        return adminService.login(usernameEmail);
-    }
 }

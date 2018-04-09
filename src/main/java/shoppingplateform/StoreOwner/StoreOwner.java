@@ -18,4 +18,14 @@ public class StoreOwner extends User {
     public StoreOwner(String username, String password, String email, String firstname, String lastname, String salt, String type) {
         super(username, password, email, firstname, lastname, salt, type);
     }
+
+    public StoreOwner(User user){
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.email = user.getEmail();
+        this.firstname = user.getFirstname();
+        this.lastname = user.getLastname();
+        this.salt = user.getSalt();
+        this.type = user.getType();
+    }
 }

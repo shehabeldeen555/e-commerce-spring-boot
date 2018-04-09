@@ -17,17 +17,6 @@ public class StoreOwnerController {
     @Autowired
     private StoreOwnerService storeOwnerService;
 
-    @RequestMapping(value = "/login/{usernameEmail}", method = RequestMethod.GET)
-    Optional<StoreOwner> login(@PathVariable String usernameEmail) {
-       return storeOwnerService.login(usernameEmail);
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    boolean register(@RequestBody StoreOwner storeOwner) {
-       return storeOwnerService.register(storeOwner);
-    }
-
-
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     public List<StoreOwner> getAll() {
         return storeOwnerService.getAll();

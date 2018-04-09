@@ -20,4 +20,9 @@ public class UserController {
     Optional<User> login(@RequestBody User user) {
         return userService.login(user);
     }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    boolean register(@RequestBody User user) {
+        return userService.register(user);
+    }
 }

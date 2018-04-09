@@ -12,13 +12,4 @@ public class AdminService {
     @Resource
     private AdminRepository adminRepository;
 
-    public Optional<Admin> login(String usernameEmail) {
-        Optional<Admin> admin= adminRepository.findByUsername(usernameEmail);
-        if(admin.isPresent()){
-            return admin;
-        } else {
-            admin = adminRepository.findByEmail(usernameEmail);
-            return admin;
-        }
-    }
 }
