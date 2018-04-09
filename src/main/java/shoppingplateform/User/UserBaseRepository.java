@@ -11,5 +11,5 @@ public interface UserBaseRepository<T, ID extends Serializable> extends JpaRepos
 
     public Optional<T> findByUsername(String username);
     public Optional<T> findByEmail(String email);
-
+    public Optional<T> findByUsernameOrEmail(String username, String email);
 }

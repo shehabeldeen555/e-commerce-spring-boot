@@ -15,9 +15,7 @@ public class StoreOwner extends User {
 
     public StoreOwner(){}
 
-    public StoreOwner(String username, String password, String firstname, String lastname, String email) {
-        super(username, password, firstname, lastname, email);
+    public StoreOwner(String username, String password, String email, String firstname, String lastname, String salt, String type) {
+        super(username, password, email, firstname, lastname, salt, type);
     }
-
-
 }

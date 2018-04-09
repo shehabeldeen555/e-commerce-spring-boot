@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "USER")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "USER_TYPE" , discriminatorType = DiscriminatorType.STRING)
-public abstract class User {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,18 +17,22 @@ public abstract class User {
     //@Column(unique = true)
     protected String email;
     protected String firstname, lastname;
+    protected String salt;
+    @Column(name = "USER_TYPE", insertable = false, updatable = false)
+    protected String type;
 
 
     public User() {
     }
 
-    public User(String username, String password, String firstname, String lastname, String email) {
+    public User(String username, String password, String email, String firstname, String lastname, String salt, String type) {
         this.username = username;
         this.password = password;
+        this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.email = email;
-
+        this.salt = salt;
+        this.type = type;
     }
 
     public Integer getId() {
@@ -77,5 +81,21 @@ public abstract class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
