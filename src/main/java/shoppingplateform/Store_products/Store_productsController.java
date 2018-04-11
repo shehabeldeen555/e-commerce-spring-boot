@@ -27,4 +27,10 @@ public class Store_productsController {
         store_productsService.view(storeID, productID);
     }
 
+    @RequestMapping(value = "/buy/{storeID}/{productID}/{quantity}/{address}",method = RequestMethod.GET)
+    public void buy(@PathVariable Integer storeID, @PathVariable Integer productID, @PathVariable Integer quantity,
+                    @PathVariable String address){
+        store_productsService.buy(storeID, productID, quantity, address);
+    }
+
 }

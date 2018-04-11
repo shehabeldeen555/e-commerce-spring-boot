@@ -12,22 +12,20 @@ public class Store_products {
     private Integer productID;
     private Integer views;
     private Integer sold;
+    private Integer quantity;
 
     public Store_products() {
         views = 0;
         sold = 0;
+        quantity=0;
     }
 
-    public Store_products(Integer storeID, Integer productID) {
-        this.storeID = storeID;
-        this.productID = productID;
-    }
-
-    public Store_products(Integer storeID, Integer productID, Integer views, Integer sold) {
+    public Store_products(Integer storeID, Integer productID, Integer views, Integer sold, Integer quantity) {
         this.storeID = storeID;
         this.productID = productID;
         this.views = views;
         this.sold = sold;
+        this.quantity = quantity;
     }
 
     public Integer getStoreID() {
@@ -62,7 +60,19 @@ public class Store_products {
         this.sold = sold;
     }
 
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     public void increaseView(){
         views++;
+    }
+
+    public void increaseSold(){
+        sold++;
     }
 }
