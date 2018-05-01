@@ -43,5 +43,9 @@ public class StoreController {
         return storeService.getAll();
     }
 
+    @RequestMapping(value = "/getStore/{storeID}",method = RequestMethod.GET)
+    public Optional<Store> getStore(@PathVariable Integer storeID){
+        return storeService.getStore(storeID);
+    }
 
 }

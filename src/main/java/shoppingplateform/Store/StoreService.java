@@ -46,4 +46,9 @@ public class StoreService {
     public List<Store> getStores(String username){
         return storeRepository.findByStoreOwnerAndAdded(username,true);
     }
+
+    public Optional<Store> getStore(Integer storeID){
+        return storeRepository.findById(storeID);
+    }
+
 }
